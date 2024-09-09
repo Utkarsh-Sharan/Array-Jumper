@@ -1,5 +1,7 @@
 #pragma once
 #include "UI/UIElement/ImageView.h"
+#include "Global/Config.h"
+#include "Global/ServiceLocator.h"
 
 namespace Player
 {

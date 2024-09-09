@@ -3,6 +3,7 @@
 namespace Player
 {
 	using namespace UI::UIElement;
+	using namespace Global;
 
 	PlayerView::PlayerView(/*PlayerController* playerController*/)
 	{
@@ -17,46 +18,50 @@ namespace Player
 
 	void PlayerView::initialize()
 	{
+		game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
 
-	}
-
-	void PlayerView::initializePlayerImage()
-	{
-
-	}
-
-	void PlayerView::drawPlayer()
-	{
-
+		loadPlayer();
 	}
 
 	void PlayerView::loadPlayer()
 	{
-
+		calculatePlayerDimensions();
+		initializePlayerImage();
 	}
 
 	void PlayerView::calculatePlayerDimensions()
 	{
+		player_width = 1000.0f;
+		player_height = 1000.0f;
+	}
 
+	void PlayerView::initializePlayerImage()
+	{
+		player_image->initialize(Config::character_texture_path, player_width, player_height, sf::Vector2f(0, 0));
 	}
 
 	void PlayerView::update()
 	{
-
+		updatePlayerPosition();
 	}
 
 	void PlayerView::updatePlayerPosition()
 	{
-
-	}
-
-	void PlayerView::render()
-	{
-
+		player_image->setPosition(calculatePlayerPosition());
 	}
 
 	sf::Vector2f PlayerView::calculatePlayerPosition()
 	{
-		return sf::Vector2f();
+		return sf::Vector2f(0, 0);
+	}
+
+	void PlayerView::render()
+	{
+		drawPlayer();
+	}
+
+	void PlayerView::drawPlayer()
+	{
+		player_image->render();
 	}
 }
