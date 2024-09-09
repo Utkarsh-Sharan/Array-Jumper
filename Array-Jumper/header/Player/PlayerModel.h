@@ -18,6 +18,9 @@ namespace Player
 		PlayerModel();
 		~PlayerModel();
 
+		void initialize();
+		void update();
+
 		PlayerState getPlayerState();
 		void setPlayerState(PlayerState new_player_state);
 

@@ -5,15 +5,21 @@ namespace Player
 	using namespace UI::UIElement;
 	using namespace Global;
 
-	PlayerView::PlayerView(/*PlayerController* playerController*/)
+	PlayerView::PlayerView(PlayerController* controller)
 	{
+		player_controller = controller;
+
 		game_window = nullptr;
 		player_image = new ImageView();
 	}
 
 	PlayerView::~PlayerView()
 	{
+		game_window = nullptr;
+		player_image = nullptr;
 
+		delete(game_window);
+		delete(player_image);
 	}
 
 	void PlayerView::initialize()
