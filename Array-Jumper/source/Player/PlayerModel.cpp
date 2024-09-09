@@ -12,6 +12,16 @@ namespace Player
 
 	}
 
+	void PlayerModel::initialize()
+	{
+
+	}
+
+	void PlayerModel::update()
+	{
+
+	}
+
 	PlayerState PlayerModel::getPlayerState()
 	{
 		return player_state;
