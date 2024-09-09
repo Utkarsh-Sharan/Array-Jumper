@@ -1,4 +1,6 @@
 #include "Player/PlayerView.h"
+#include "Player/PlayerController.h"
+#include "Player/PlayerModel.h"
 
 namespace Player
 {
@@ -63,7 +65,12 @@ namespace Player
 
 	void PlayerView::render()
 	{
-		drawPlayer();
+		switch (player_controller->getPlayerState())
+		{
+		case PlayerState::ALIVE:
+			drawPlayer();
+			break;
+		}
 	}
 
 	void PlayerView::drawPlayer()
