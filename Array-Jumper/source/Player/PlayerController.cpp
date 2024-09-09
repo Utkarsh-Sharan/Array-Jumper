@@ -19,6 +19,8 @@ namespace Player
 	{
 		player_model->initialize();
 		player_view->initialize();
+
+		setPlayerState(PlayerState::ALIVE);
 	}
 
 	void PlayerController::update()
