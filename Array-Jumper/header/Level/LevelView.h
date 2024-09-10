@@ -1,6 +1,6 @@
 #pragma once
 #include "UI/UIElement/ImageView.h"
-#include "Level/LevelModel.h"
+#include "Level/LevelController.h"
 
 namespace Level
 {
@@ -47,5 +47,7 @@ namespace Level
 		void initialize();
 		void update();
 		void render();
+
+		BoxDimensions getBoxDimensions();
 	};
 }

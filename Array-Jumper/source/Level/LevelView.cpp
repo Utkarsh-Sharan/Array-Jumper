@@ -1,5 +1,5 @@
 #include "Level/LevelView.h"
-#include "Level/LevelController.h"
+//#include "Level/LevelController.h"
 
 #include "Global/ServiceLocator.h"
 #include "Global/Config.h"
@@ -174,6 +174,11 @@ namespace Level
 		}
 
 		return nullptr;
+	}
+
+	BoxDimensions LevelView::getBoxDimensions()
+	{
+		return box_dimensions;
 	}
 
 	void LevelView::deleteImages()
