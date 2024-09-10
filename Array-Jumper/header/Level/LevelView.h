@@ -1,5 +1,6 @@
 #pragma once
 #include "UI/UIElement/ImageView.h"
+#include "Level/LevelModel.h"
 
 namespace Level
 {
@@ -14,6 +15,10 @@ namespace Level
 		UI::UIElement::ImageView* background_image;
 		const float background_alpha = 110.f;
 
+		UI::UIElement::ImageView* box_image;
+		BoxDimensions box_dimensions;
+
+		void calculateBoxDimensions();
 		void createImages();
 		void initializeImages();
 		void updateImages();
