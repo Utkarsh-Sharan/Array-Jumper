@@ -29,6 +29,7 @@ namespace Player
 		player_model->initialize();
 		player_view->initialize();
 
+		player_model->resetPlayer();
 		event_service = ServiceLocator::getInstance()->getEventService();
 	}
 
@@ -116,6 +117,11 @@ namespace Player
 		if (targetPosition >= 0 && targetPosition < LevelData::NUMBER_OF_BOXES)
 			return true;
 		return false;
+	}
+
+	void PlayerController::takeDamage()
+	{
+		player_model->resetPlayer();
 	}
 
 	void PlayerController::render()

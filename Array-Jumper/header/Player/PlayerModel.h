@@ -26,5 +26,7 @@ namespace Player
 
 		float getPosition();
 		void setPosition(float new_position);
+
+		void resetPlayer();
 	};
 }
