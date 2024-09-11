@@ -37,7 +37,10 @@ namespace Player
 
 		int getCurrentPosition();
 
+		int getCurrentLives();
+
 		void takeDamage();
+		void onDeath();
 		void reset();
 	};
 }

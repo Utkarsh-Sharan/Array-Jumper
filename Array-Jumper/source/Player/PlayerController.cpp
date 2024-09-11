@@ -125,7 +125,12 @@ namespace Player
 
 	void PlayerController::takeDamage()
 	{
-		player_model->resetPlayer();
+		player_model->decrementLife();
+
+		if (player_model->getCurrentLives() <= 0)
+			onDeath();
+		else
+			player_model->resetPosition();
 	}
 
 	void PlayerController::render()
@@ -146,6 +151,17 @@ namespace Player
 	int PlayerController::getCurrentPosition()
 	{
 		return player_model->getPosition();
+	}
+
+	int PlayerController::getCurrentLives()
+	{
+		return player_model->getCurrentLives();
+	}
+
+	void PlayerController::onDeath()
+	{
+		ServiceLocator::getInstance()->getGameplayService()->onDeath();
+		reset();
 	}
 
 	void PlayerController::reset()

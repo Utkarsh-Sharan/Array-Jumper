@@ -14,6 +14,9 @@ namespace Player
 		PlayerState player_state;
 		int current_position;
 
+		const int max_lives = 3;
+		int current_lives;
+
 	public:
 		PlayerModel();
 		~PlayerModel();
@@ -27,6 +30,10 @@ namespace Player
 		float getPosition();
 		void setPosition(float new_position);
 
+		int getCurrentLives();
+		void decrementLife();
+
+		void resetPosition();
 		void resetPlayer();
 	};
 }
