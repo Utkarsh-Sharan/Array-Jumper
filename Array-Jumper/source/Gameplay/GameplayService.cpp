@@ -24,4 +24,9 @@ namespace Gameplay
 	{
 		gameplay_controller->update();
 	}
+
+	void GameplayService::onPositionChanged(int position)
+	{
+		gameplay_controller->onPositionChanged(position);
+	}
 }
