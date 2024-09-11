@@ -28,6 +28,11 @@ namespace Player
 		player_controller->render();
 	}
 
+	void PlayerService::takeDamage()
+	{
+		player_controller->takeDamage();
+	}
+
 	void PlayerService::destroy()
 	{
 		player_controller = nullptr;

@@ -29,6 +29,7 @@ namespace Player
 		player_model->initialize();
 		player_view->initialize();
 
+		player_model->resetPlayer();
 		event_service = ServiceLocator::getInstance()->getEventService();
 	}
 
@@ -81,6 +82,8 @@ namespace Player
 
 		player_model->setPosition(targetPosition);
 		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::MOVE);
+
+		ServiceLocator::getInstance()->getGameplayService()->onPositionChanged(getCurrentPosition());
 	}
 
 	void PlayerController::jump(MovementDirection direction)
@@ -109,6 +112,8 @@ namespace Player
 
 		player_model->setPosition(targetPosition);
 		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::JUMP);
+
+		ServiceLocator::getInstance()->getGameplayService()->onPositionChanged(current_position);
 	}
 
 	bool PlayerController::isPositionInBound(int targetPosition)
@@ -116,6 +121,11 @@ namespace Player
 		if (targetPosition >= 0 && targetPosition < LevelData::NUMBER_OF_BOXES)
 			return true;
 		return false;
+	}
+
+	void PlayerController::takeDamage()
+	{
+		player_model->resetPlayer();
 	}
 
 	void PlayerController::render()
