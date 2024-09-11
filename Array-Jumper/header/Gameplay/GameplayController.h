@@ -10,6 +10,9 @@ namespace Gameplay
 		bool isObstacle(Level::BlockType value);
 		void processObstacle();
 
+		bool isEndBlock(Level::BlockType value);
+		void processEndBlock();
+
 	public:
 		GameplayController();
 		~GameplayController();

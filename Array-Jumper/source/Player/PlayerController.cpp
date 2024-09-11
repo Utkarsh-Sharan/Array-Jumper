@@ -148,6 +148,11 @@ namespace Player
 		return player_model->getPosition();
 	}
 
+	void PlayerController::reset()
+	{
+		player_model->resetPlayer();
+	}
+
 	void PlayerController::destroy()
 	{
 		player_model = nullptr;
