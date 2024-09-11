@@ -11,6 +11,7 @@ namespace Player
 	using namespace Global;
 	using namespace Sound;
 	using namespace Level;
+	using namespace Event;
 
 	PlayerController::PlayerController()
 	{
@@ -27,12 +28,28 @@ namespace Player
 	{
 		player_model->initialize();
 		player_view->initialize();
+
+		event_service = ServiceLocator::getInstance()->getEventService();
 	}
 
 	void PlayerController::update()
 	{
 		player_model->update();
 		player_view->update();
+
+		readInput();
+	}
+
+	void PlayerController::readInput()
+	{
+		if (event_service->pressedRightArrowKey() || event_service->pressedDKey())
+		{
+			move(MovementDirection::FORWARD);
+		}
+		if (event_service->pressedLeftArrowKey() || event_service->pressedAKey())
+		{
+			move(MovementDirection::BACKWARD);
+		}
 	}
 
 	void PlayerController::move(MovementDirection direction)

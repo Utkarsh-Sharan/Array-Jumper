@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Player/MovementDirection.h"
+#include "Event/EventService.h"
 
 namespace Player
 {
@@ -14,6 +15,9 @@ namespace Player
 		PlayerModel* player_model;
 		PlayerView* player_view;
 
+		Event::EventService* event_service;
+
+		void readInput();
 		void move(MovementDirection direction);
 		bool isPositionInBound(int targetPosition);
 		void destroy();
