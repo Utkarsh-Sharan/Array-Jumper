@@ -24,7 +24,7 @@ namespace Player
 		PlayerState getPlayerState();
 		void setPlayerState(PlayerState new_player_state);
 
-		int getPosition();
-		void setPosition(int new_position);
+		float getPosition();
+		void setPosition(float new_position);
 	};
 }
