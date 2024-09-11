@@ -19,13 +19,11 @@ namespace Player
 	{
 		player_model->initialize();
 		player_view->initialize();
-
-		setPlayerState(PlayerState::ALIVE);
 	}
 
 	void PlayerController::update()
 	{
-		//player_model->update();
+		player_model->update();
 		player_view->update();
 	}
 
@@ -42,6 +40,11 @@ namespace Player
 	void PlayerController::setPlayerState(PlayerState new_player_state)
 	{
 		player_model->setPlayerState(new_player_state);
+	}
+
+	int PlayerController::getCurrentPosition()
+	{
+		return player_model->getPosition();
 	}
 
 	void PlayerController::destroy()

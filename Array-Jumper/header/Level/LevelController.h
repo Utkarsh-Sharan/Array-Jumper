@@ -1,10 +1,10 @@
 #pragma once
 #include "Level/LevelData.h"
+#include "Level/LevelModel.h"
 
 namespace Level
 {
 	class LevelView;
-	class LevelModel;
 
 	class LevelController
 	{
@@ -21,5 +21,6 @@ namespace Level
 		void render();
 
 		BlockType getCurrentBoxValue(int currentPosition);
+		BoxDimensions getBoxDimensions();
 	};
 }

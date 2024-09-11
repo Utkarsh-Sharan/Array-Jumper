@@ -1,9 +1,8 @@
 #pragma once
+#include "Level/LevelController.h"
 
 namespace Level
 {
-	class LevelController;
-
 	class LevelService
 	{
 	private:
@@ -17,5 +16,7 @@ namespace Level
 		void initialize();
 		void update();
 		void render();
+
+		BoxDimensions getBoxDimensions();
 	};
 }

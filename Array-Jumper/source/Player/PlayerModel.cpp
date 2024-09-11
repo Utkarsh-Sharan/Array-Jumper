@@ -14,7 +14,8 @@ namespace Player
 
 	void PlayerModel::initialize()
 	{
-
+		setPlayerState(PlayerState::ALIVE);
+		setPosition(0.0f);
 	}
 
 	void PlayerModel::update()
@@ -32,12 +33,12 @@ namespace Player
 		player_state = new_player_state;
 	}
 
-	int PlayerModel::getPosition()
+	float PlayerModel::getPosition()
 	{
 		return current_position;
 	}
 
-	void PlayerModel::setPosition(int new_position)
+	void PlayerModel::setPosition(float new_position)
 	{
 		current_position = new_position;
 	}
