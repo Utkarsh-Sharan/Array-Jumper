@@ -32,6 +32,11 @@ namespace Level
 		return level_controller->getBoxDimensions();
 	}
 
+	BlockType LevelService::getCurrentBoxValue(int currentPosition)
+	{
+		return level_controller->getCurrentBoxValue(currentPosition);
+	}
+
 	void LevelService::destroy()
 	{
 		level_controller = nullptr;
