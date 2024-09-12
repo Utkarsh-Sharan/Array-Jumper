@@ -1,10 +1,11 @@
 #include "Level/LevelModel.h"
+#include <iostream>
 
 namespace Level
 {
 	LevelModel::LevelModel()
 	{
-
+		reset();
 	}
 
 	LevelModel::~LevelModel()

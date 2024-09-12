@@ -13,7 +13,11 @@ namespace Gameplay
 		bool isEndBlock(Level::BlockType value);
 		void processEndBlock();
 
+		void loadNextLevel();
+		bool isLastLevel();
+
 		void gameOver();
+		void gameWon();
 
 	public:
 		GameplayController();
