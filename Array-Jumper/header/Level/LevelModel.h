@@ -1,5 +1,6 @@
 #pragma once
 #include "Level/LevelData.h"
+#include "Level/LevelConfiguration.h"
 
 namespace Level
 {
@@ -16,7 +17,9 @@ namespace Level
 	class LevelModel
 	{
 	private:
-		LevelData current_level_data;
+		//LevelData current_level_data;
+		LevelConfiguration level_configuration;
+		int current_level_index;
 
 	public:
 		LevelModel();
