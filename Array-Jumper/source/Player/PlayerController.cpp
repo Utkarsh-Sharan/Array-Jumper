@@ -113,7 +113,7 @@ namespace Player
 		player_model->setPosition(targetPosition);
 		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::JUMP);
 
-		ServiceLocator::getInstance()->getGameplayService()->onPositionChanged(current_position);
+		ServiceLocator::getInstance()->getGameplayService()->onPositionChanged(getCurrentPosition());
 	}
 
 	bool PlayerController::isPositionInBound(int targetPosition)
