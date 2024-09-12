@@ -17,7 +17,7 @@ namespace Level
 	class LevelModel
 	{
 	private:
-		//LevelData current_level_data;
+		//const int number_of_level = LevelConfiguration::NUMBER_OF_LEVELS;
 		LevelConfiguration level_configuration;
 		int current_level_index;
 
@@ -25,6 +25,12 @@ namespace Level
 		LevelModel();
 		~LevelModel();
 
+		void loadNextLevel();
+		int getCurrentLevelNumber();
+		bool isLastLevel();
+
 		BlockType getCurrentBoxValue(int currentPosition);
+
+		void reset();
 	};
 }
