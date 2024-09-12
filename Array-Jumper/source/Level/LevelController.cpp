@@ -29,6 +29,21 @@ namespace Level
 		level_view->render();
 	}
 
+	void LevelController::loadNextLevel()
+	{
+		level_model->loadNextLevel();
+	}
+
+	int LevelController::getCurrentLevelNumber()
+	{
+		return level_model->getCurrentLevelNumber();
+	}
+
+	bool LevelController::isLastLevel()
+	{
+		return level_model->isLastLevel();
+	}
+
 	BlockType LevelController::getCurrentBoxValue(int currentPosition)
 	{
 		return level_model->getCurrentBoxValue(currentPosition);
@@ -37,5 +52,10 @@ namespace Level
 	BoxDimensions LevelController::getBoxDimensions()
 	{
 		return level_view->getBoxDimensions();
+	}
+
+	void LevelController::reset()
+	{
+		level_model->reset();
 	}
 }
